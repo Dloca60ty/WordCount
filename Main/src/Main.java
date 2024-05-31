@@ -4,13 +4,7 @@ import java.io.IOException;
 
 class Main {
 
-    public static void main(String[] args) {
-        /*if (args.length != 1) {
-            System.out.println("Usage: java FileWordCharacterCounter <filename>");
-            return;
-        }
-
-        String filename = args[0];*/
+    public static void main(String[] args) throws IOException {
         int charCount = 0;
         int wordCount = 0;
         boolean inWord = false;
@@ -30,7 +24,7 @@ class Main {
                 }
             }
 
-            // Check if the last word extends to the end of the file
+            // 判断是不是最后一个单词
             if (inWord) {
                 wordCount++;
             }
@@ -38,8 +32,6 @@ class Main {
             System.out.println("字符数: " + charCount);
             System.out.println("单词数: " + wordCount);
 
-        } catch (IOException e) {
-            System.out.println("Error reading file: " + e.getMessage());
         }
     }
 }
